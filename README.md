@@ -1,4 +1,4 @@
-# HackerConnect
+# Vibe-Pair
 
 Built for the **Agents You Love** hackathon (2026-07-28, Frontier Tower).
 
