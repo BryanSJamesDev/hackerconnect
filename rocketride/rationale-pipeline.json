@@ -1,0 +1,25 @@
+{
+  "description": "HackerConnect rationale agent — turns deterministically-scored HydraDB evidence into short natural-language rationale for teammate/event suggestions. apikey is injected at deploy time from GROQ_API_KEY, never committed here.",
+  "version": 1,
+  "source": "input_webhook",
+  "components": [
+    { "id": "input_webhook", "provider": "webhook", "config": {} },
+    {
+      "id": "rationale_llm",
+      "provider": "llm_openai_api",
+      "config": {
+        "apikey": "${GROQ_API_KEY}",
+        "base_url": "https://api.groq.com/openai/v1",
+        "model": "${GROQ_MODEL}",
+        "modelTotalTokens": 32768
+      },
+      "input": [{ "lane": "questions", "from": "input_webhook" }]
+    },
+    {
+      "id": "send_response",
+      "provider": "response",
+      "config": {},
+      "input": [{ "lane": "answers", "from": "rationale_llm" }]
+    }
+  ]
+}
