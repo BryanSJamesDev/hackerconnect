@@ -2,7 +2,7 @@
 
 Built for the **Agents You Love** hackathon (2026-07-28, Frontier Tower).
 
-HackerConnect answers one question live: **"What's my next event, and who should I team with there?"**
+Vibe-Pair answers one question live: **"What's my next event, and who should I team with there?"**
 It's deliberately a question no single connector can answer — teammate chemistry lives in GitHub/Slack/Linear,
 event discovery lives in Gmail, and the useful answer requires joining across both.
 
